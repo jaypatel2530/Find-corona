@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        applicationId "com.example.findcorona"
+        minSdkVersion 18
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:1.0.2'
+
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "com.google.android.gms:play-services-location:17.0.0"
+
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+    implementation 'junit:junit:4.12'
+    implementation'com.firebase:geofire-android:3.0.0'
+implementation'com.google.firebase:firebase-database:19.2.1'
+    implementation'com.karumi:dexter:5.0.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+}
+apply plugin: 'com.google.gms.google-services'
